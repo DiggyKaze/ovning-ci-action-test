@@ -1,7 +1,7 @@
 name: "7. Manual approval gate"
 
 on:
-  workflows_call:
+  workflow_call:
 jobs:
   approval:
     runs-on: ubuntu-approval
