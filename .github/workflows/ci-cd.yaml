@@ -53,9 +53,9 @@ jobs:
     needs: approval
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/08-deploy-production.yaml
-      with:
-        app_name: demo-service
-        version: 1.0.${{ github.run_number}}
+    with:
+      app_name: demo-service
+      version: 1.0.${{ github.run_number}}
   notify:
     needs: deploy-production
     if: always()
