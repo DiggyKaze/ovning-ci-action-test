@@ -14,7 +14,7 @@ jobs:
     uses: ./.github/workflows/00-bootstrap.yaml
 
   lint:
-    bootstrap:
+    needs: bootstrap
     uses: ./.github/workflows/01-lint.yaml
   
   unit-test:
@@ -61,5 +61,5 @@ jobs:
     if: always()
     uses: ./.github/workflows/09-notify.yaml
     with:
-      version: 1.0.${{ githubt.run_number}}
+      version: 1.0.${{ github.run_number}}
 
